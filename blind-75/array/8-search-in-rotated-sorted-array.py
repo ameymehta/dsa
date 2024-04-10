@@ -9,7 +9,7 @@ class Solution(object):
         #     if nums[i] == target:
         #         return i
         # return -1
-        l= 0
+        l = 0
         r = len(nums) - 1
         while l <= r:
             mid = (l + r) / 2

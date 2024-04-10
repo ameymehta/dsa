@@ -5,18 +5,20 @@ class TreeNode(object):
         self.left = None
         self.right = None
 
+
 from collections import deque
+
 
 class Codec:
 
     def serialize(self, root):
         """Encodes a tree to a single string.
-        
+
         :type root: TreeNode
         :rtype: str
         """
         if root == None:
-            return ''
+            return ""
         result = []
         q = deque()
         q.append(root)
@@ -27,21 +29,18 @@ class Codec:
                 q.append(curNode.left)
                 q.append(curNode.right)
             else:
-                result.append('')
-        return ','.join(result)
-
-            
-        
+                result.append("")
+        return ",".join(result)
 
     def deserialize(self, data):
         """Decodes your encoded data to tree.
-        
+
         :type data: str
         :rtype: TreeNode
         """
         if not data:
             return None
-        arr = data.split(',')
+        arr = data.split(",")
         root = TreeNode(arr[0])
         q = deque()
         q.append(root)

@@ -7,7 +7,7 @@ class Solution(object):
         left = 0
         right = len(nums) - 1
         while left < right:
-            mid = left + ((right - left)//2)
+            mid = left + ((right - left) // 2)
 
             if nums[mid] > nums[right]:
                 left = mid + 1
@@ -15,12 +15,13 @@ class Solution(object):
                 right = mid
         return nums[right]
         # return nums[left] # works too
-    
+
+
 def main():
     sol = Solution()
-    print(sol.findMin([3,4,5,1,2]))
-    print(sol.findMin([4,5,6,7,0,1,2]))
-    print(sol.findMin([11,13,15,17]))
+    print(sol.findMin([3, 4, 5, 1, 2]))
+    print(sol.findMin([4, 5, 6, 7, 0, 1, 2]))
+    print(sol.findMin([11, 13, 15, 17]))
 
 
 main()

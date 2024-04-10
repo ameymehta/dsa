@@ -24,10 +24,12 @@ class Solution(object):
                     del char_freq[left_ch]
                 left += 1
         return max_len
-    
+
+
 def main():
     sol = Solution()
     print(sol.characterReplacement("ABAB", 2))
     print(sol.characterReplacement("AABABBA", 1))
+
 
 main()

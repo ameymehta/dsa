@@ -11,11 +11,11 @@ class Solution(object):
                 zeroCount += 1
             else:
                 productOfAll = productOfAll * num
-        
+
         answer = []
         if zeroCount > 1:
             return [0] * len(nums)
-        
+
         for num in nums:
             if num != 0:
                 if zeroCount == 1:
@@ -26,10 +26,12 @@ class Solution(object):
                 answer.append(productOfAll)
 
         return answer
-    
+
+
 def main():
     sol = Solution()
-    print(sol.productExceptSelf([1,2,3,4]))
-    print(sol.productExceptSelf([-1,1,0,-3,3]))
+    print(sol.productExceptSelf([1, 2, 3, 4]))
+    print(sol.productExceptSelf([-1, 1, 0, -3, 3]))
+
 
 main()

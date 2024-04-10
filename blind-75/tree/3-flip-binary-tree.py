@@ -6,6 +6,7 @@
 #         self.right = right
 from collections import deque
 
+
 class Solution(object):
     def invertTree(self, root):
         """
@@ -21,10 +22,12 @@ class Solution(object):
             for i in range(current_len):
                 current_node = q.popleft()
                 if current_node.left and current_node.right:
-                    current_node.left, current_node.right = current_node.right, current_node.left
+                    current_node.left, current_node.right = (
+                        current_node.right,
+                        current_node.left,
+                    )
                 if current_node.left:
                     q.append(current_node.left)
                 if current_node.right:
                     q.append(current_node.right)
         return root
-            

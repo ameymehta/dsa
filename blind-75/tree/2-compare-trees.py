@@ -30,4 +30,3 @@ class Solution(object):
         elif p.right and q.right:
             right_tree_same = self.dfs(p.right, q.right)
         return value_same and left_tree_same and right_tree_same
-        

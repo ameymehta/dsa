@@ -19,5 +19,9 @@ class Solution(object):
 
     def isSameTree(self, n, subn):
         if n and subn:
-            return n.val == subn.val and self.isSameTree(n.left, subn.left) and self.isSameTree(n.right, subn.right)
+            return (
+                n.val == subn.val
+                and self.isSameTree(n.left, subn.left)
+                and self.isSameTree(n.right, subn.right)
+            )
         return n == subn

@@ -11,12 +11,12 @@ class Solution(object):
         :rtype: int
         """
         return self.calc_height(root)
-    
+
     def calc_height(self, root):
         if root == None:
             return 0
-        
+
         left_height = self.calc_height(root.left)
         right_height = self.calc_height(root.right)
-        
+
         return max(left_height, right_height) + 1
