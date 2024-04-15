@@ -80,7 +80,7 @@
 
 1. [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
 1. [Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/)
-1. [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
+1. [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/) (H)
 1. [Valid Anagram](https://leetcode.com/problems/valid-anagram/)
 1. [Group Anagrams](https://leetcode.com/problems/group-anagrams/)
 1. [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)

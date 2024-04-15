@@ -1,5 +1,21 @@
 from collections import defaultdict
 
+# Example 1:
+# Input: s = "ADOBECODEBANC", t = "ABC"
+# Output: "BANC"
+# Explanation: The minimum window substring "BANC" includes 'A', 'B', and 'C' from string t.
+
+# Example 2:
+# Input: s = "a", t = "a"
+# Output: "a"
+# Explanation: The entire string s is the minimum window.
+
+# Example 3:
+# Input: s = "a", t = "aa"
+# Output: ""
+# Explanation: Both 'a's from t must be included in the window.
+# Since the largest window of s only has one 'a', return empty string.
+
 
 class Solution(object):
     def minWindow(self, s, t):
@@ -19,6 +35,7 @@ class Solution(object):
         res_len = -1
         res_l = 0
         res_r = 0
+
         for r in range(len(s)):
             c = s[r]
             window_dict[c] += 1
