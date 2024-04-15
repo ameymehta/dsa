@@ -111,3 +111,16 @@
 1. [Blind 75](https://leetcode.com/discuss/general-discussion/460599/blind-75-leetcode-questions)
 1. [14 Patterns to Ace Any Coding Interview Question](https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed)
 1. [Grind 75](https://www.techinterviewhandbook.org/grind75)
+
+## Suggested Order:
+
+1. Array
+1. Linked List
+1. Tree
+1. Heap
+1. Intervals
+1. String
+1. Matrix
+1. Binary
+1. Graph
+1. Dynamic Programming
