@@ -12,14 +12,15 @@ class Solution(object):
         result = 0
         start = 0
         end = 1
-        cur = intervals[0]
+        cur_end = intervals[0][end]
         for i in range(1, len(intervals)):
-            if cur[end] > intervals[i][start]:
-                # overlapping found, count it
+            # if overlapping, count it and adjust cur_end
+            if cur_end > intervals[i][start]:
                 result += 1
-                if intervals[i][end] < cur[end]:
-                    cur[end] = intervals[i][end]
+                if intervals[i][end] < cur_end:
+                    cur_end = intervals[i][end]
+            # if not overlapping, update cur_end
             else:
-                cur[end] = intervals[i][end]
+                cur_end = intervals[i][end]
 
         return result
