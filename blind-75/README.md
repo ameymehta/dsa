@@ -117,10 +117,10 @@
 1. Array
 1. Linked List
 1. Tree
-1. Heap
 1. Intervals
-1. String
-1. Matrix
 1. Binary
+1. String
+1. Heap
+1. Matrix
 1. Graph
 1. Dynamic Programming
