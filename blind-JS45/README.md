@@ -1,4 +1,4 @@
-# Blind 75
+# Blind 45 for JavaScript
 
 ## Array
 
