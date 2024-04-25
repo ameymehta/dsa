@@ -20,6 +20,10 @@
 1. [Missing Number](https://leetcode.com/problems/missing-number/) - `easy`
 1. [Reverse Bits](https://leetcode.com/problems/reverse-bits/) - `easy`
 
+## Dynamic Programming
+
+1. [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/) - `easy`
+
 ## Graph
 
 1. [Clone Graph](https://leetcode.com/problems/clone-graph/) - `Medium`
