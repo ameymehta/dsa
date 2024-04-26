@@ -61,7 +61,6 @@
 1. [Group Anagrams](https://leetcode.com/problems/group-anagrams/) - `Medium`
 1. [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) - `easy`
 1. [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) - `easy`
-1. [Encode and Decode Strings (Leetcode Premium)](https://leetcode.com/problems/encode-and-decode-strings/) - `Medium`
 
 ## Tree
 
