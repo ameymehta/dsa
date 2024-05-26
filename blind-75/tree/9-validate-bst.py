@@ -11,15 +11,12 @@ class Solution(object):
         :rtype: bool
         """
         inf = sys.maxsize
+        return self.helper(root, -inf, inf)
 
-        def helper(node, low, high):
-            if not node:
-                return True
-            if low < node.val < high:
-                return helper(node.left, low, node.val) and helper(
-                    node.right, node.val, high
-                )
-            else:
-                return False
-
-        return helper(root, -inf, inf)
+    def helper(self, node, low, high):
+        if not node:
+            return True
+        if low < node.val < high:
+            return self.helper(node.left, low, node.val) and self.helper(node.right, node.val, high)
+        else:
+            return False

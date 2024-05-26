@@ -6,22 +6,20 @@ class TreeNode:
         self.left, self.right = None, None
 
 def traverse(root):
-    result = []
-    if root == None:
-        return result
     q = deque()
     q.append(root)
+    result = []
     while q:
-        cur_len = len(q)
-        cur_level = []
-        for i in range(cur_len):
-            cur_node = q.popleft()
-            cur_level.append(cur_node.value)
-            if cur_node.left:
-                q.append(cur_node.left)
-            if cur_node.right:
-                q.append(cur_node.right)
-        result.append(cur_level)
+        curLen = len(q)
+        curLevel = []
+        for i in range(curLen):
+            cur = q.popleft()
+            if cur.left:
+                q.append(cur.left)
+            if cur.right:
+                q.append(cur.right)
+            curLevel.append(cur.value)
+        result.append(curLevel)
     return result
 
 def main():

@@ -2,11 +2,11 @@ def find_subsets(ss):
     result = []
     result.append([])
     for e in ss:
-        cur_len = len(result)
-        for i in range(cur_len):
-            cur_set = list(result[i])
-            cur_set.append(e)
-            result.append(cur_set)
+        curLen = len(result)
+        for i in range(curLen):
+            cur = list(result[i])
+            cur.append(e)
+            result.append(cur)
     return result
 
 
