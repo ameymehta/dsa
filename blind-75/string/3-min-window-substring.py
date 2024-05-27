@@ -24,41 +24,36 @@ class Solution(object):
         :type t: str
         :rtype: str
         """
-        t_dict = defaultdict(int)
-        for c in t:
-            t_dict[c] += 1
-
-        required = len(t_dict)
+        tMap = defaultdict(int)
+        for ch in t:
+            tMap[ch] += 1
+        required = len(tMap)
         formed = 0
+
+        winMap = defaultdict(int)
+        winLen = -1
+        winL = 0
+        winR = 0
         l = 0
-        window_dict = defaultdict(int)
-        res_len = -1
-        res_l = 0
-        res_r = 0
-
         for r in range(len(s)):
-            c = s[r]
-            window_dict[c] += 1
-
-            if c in t_dict and window_dict[c] == t_dict[c]:
+            ch = s[r]
+            winMap[ch] += 1
+            if ch in tMap and winMap[ch] == tMap[ch]:
                 formed += 1
-
+            # reducing window from left
             while l <= r and formed == required:
-                c = s[l]
-
-                if res_len == -1 or r - l + 1 < res_len:
-                    res_len = r - l + 1
-                    res_l = l
-                    res_r = r
-
-                window_dict[c] -= 1
-
-                if c in t_dict and window_dict[c] < t_dict[c]:
+                lch = s[l]
+                curLen = r - l + 1
+                if winLen == -1 or winLen > curLen:
+                    winLen = curLen
+                    winL = l
+                    winR = r
+                winMap[lch] -= 1
+                if lch in tMap and winMap[lch] < tMap[lch]:
                     formed -= 1
-
                 l += 1
 
-        if res_len == -1:
+        if winLen == -1:
             return ""
 
-        return s[res_l : res_r + 1]
+        return s[winL : winR + 1]

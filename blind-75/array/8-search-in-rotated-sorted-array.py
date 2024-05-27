@@ -16,7 +16,7 @@ class Solution(object):
             else:
                 r = mid
         return -1
-    
+
     def searchOld(self, nums, target):
         l = 0
         r = len(nums) - 1
