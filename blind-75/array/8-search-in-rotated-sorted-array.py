@@ -5,23 +5,32 @@ class Solution(object):
         :type target: int
         :rtype: int
         """
-        # for i in range(len(nums)):
-        #     if nums[i] == target:
-        #         return i
-        # return -1
+        l = 0
+        r = len(nums) - 1
+        while l < r:
+            mid = (l + r) // 2
+            if nums[mid] == target:
+                return mid
+            elif nums[mid] > nums[r]:
+                l = mid + 1
+            else:
+                r = mid
+        return -1
+    
+    def searchOld(self, nums, target):
         l = 0
         r = len(nums) - 1
         while l <= r:
-            mid = (l + r) / 2
+            mid = (l + r) // 2
             if nums[mid] == target:
                 return mid
-            elif nums[l] <= nums[mid]:
-                if nums[l] <= target and nums[mid] >= target:
+            elif nums[l] < nums[mid]:
+                if nums[l] <= target and target <= nums[mid]:
                     r = mid - 1
                 else:
                     l = mid + 1
             else:
-                if nums[r] >= target and nums[mid] <= target:
+                if nums[r] >= target and target >= nums[mid]:
                     l = mid + 1
                 else:
                     r = mid - 1
