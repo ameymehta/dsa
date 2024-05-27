@@ -18,25 +18,20 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-        char_freq = {}
-        left = 0
-        max_len = 0
-        for right in range(len(s)):
-            right_ch = s[right]
-            if right_ch not in char_freq:
-                char_freq[right_ch] = 0
-            char_freq[right_ch] += 1
-
-            cur_len = right - left + 1
-            if cur_len - max(char_freq.values()) <= k:
-                max_len = max(max_len, cur_len)
+        m = defaultdict(int)
+        l = 0
+        maxLen = 0
+        for r in range(len(s)):
+            ch = s[r]
+            m[ch] += 1
+            curLen = r - l + 1
+            if curLen - max(m.values()) <= k:
+                maxLen = max(maxLen, curLen)
             else:
-                left_ch = s[left]
-                char_freq[left_ch] -= 1
-                if char_freq[left_ch] == 0:
-                    del char_freq[left_ch]
-                left += 1
-        return max_len
+                l_ch = s[l]
+                m[l_ch] -= 1
+                l += 1
+        return maxLen
 
 
 def main():
