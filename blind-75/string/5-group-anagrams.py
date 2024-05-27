@@ -8,24 +8,19 @@ class Solution(object):
         :rtype: List[List[str]]
         """
         result = []
-        groups = defaultdict(list)
-
+        m = defaultdict(list)
         for s in strs:
-            groups[self.getSignature(s)].append(s)
-
-        for k in groups:
-            result.append(groups[k])
-
+            m[self.getSignature(s)].append(s)
+        for k in m:
+            result.append(m[k])
         return result
-
+    
     def getSignature(self, s):
-        freq = {}
-        for c in s:
-            if c not in freq:
-                freq[c] = 0
-            freq[c] += 1
         result = []
-        for k in freq:
+        m = defaultdict(int)
+        for ch in s:
+            m[ch] += 1
+        for k in m:
             result.append(k)
-            result.append(str(freq[k]))
-        return "".join(result)
+            result.append(str(m[k]))
+        return ''.join(result)
