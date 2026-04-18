@@ -5,16 +5,16 @@ class Solution(object):
         :rtype: int
         """
         start = 0
-        freq = {}
+        index_map = {}
         max_len = 0
         for end in range(len(s) - 1):
-            current = s[end]
-            if current not in freq:
-                freq[current] = end
+            char = s[end]
+            if char not in index_map:
+                index_map[char] = end
                 max_len = max(max_len, end - start + 1)
             else:
-                start = freq[current] + 1
-                freq[current] = end
+                start = index_map[char] + 1
+                index_map[char] = end
                 max_len = max(max_len, end - start + 1)
         return max_len
 
