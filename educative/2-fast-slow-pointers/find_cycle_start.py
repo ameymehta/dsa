@@ -19,9 +19,7 @@ def find_cycle_start(head):
     while fast is not None and fast.next is not None:
         slow = slow.next
         fast = fast.next.next
-        #print('slow = ' + str(slow.value))
         if(slow == fast):
-            #print('slow and fast = ' + str(slow.value))
             cycle_length = count_cycle_length(slow)
             break
     return find_start(head, cycle_length)
@@ -33,7 +31,6 @@ def count_cycle_length(slow):
     while current != slow:
         current = current.next
         cycle_length += 1
-    #print('Cycle length: ' + str(cycle_length))
     return cycle_length
 
 
