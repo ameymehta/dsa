@@ -10,9 +10,8 @@ def reverse_words_in_string(sentence):
         if end == len_sentence or sentence[end] == ' ':
             reverse_chars(sentence, start, end - 1)
             start = end + 1
-    
     return ''.join(sentence)
-    
+
 
 
 def reverse_chars(sentence, start, end):
