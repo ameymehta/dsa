@@ -21,6 +21,20 @@ def reverse_chars(sentence, start, end):
         end -= 1
 
 
+
+### SIMPLE APPROACH -- IT WORKS!!! -- not sure why this was not done by educative
+def reverse_words_in_string(sentence):
+    words = sentence.split()
+    r = len(words) - 1
+    l = 0
+    while l < r:
+        words[l], words[r] = words[r], words[l]
+        l += 1
+        r -= 1
+    return ' '.join(words)
+### end of SIMPLE APPROACH
+
+
 def main():
     string_to_reverse = ["Hello World",
                         "a   string   with   multiple   spaces",
