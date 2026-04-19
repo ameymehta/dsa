@@ -3,7 +3,6 @@ class Node:
         self.value = value
         self.next = next
 
-
 def has_cycle(head):
     slow = head
     fast = head
