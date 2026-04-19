@@ -1,35 +1,45 @@
 from heapq import *
 
-class MedianOfAStream:
-    max_heap_for_smallnum = []
-    min_heap_for_largenum = []
+class MedianOfStream:
+    # max_heap is for small numbers (first half)
+    # such that largest of them (but close to median) is at the top
+    max_heap = []
+    # min_heap is for large numbers (second half)
+    # such that smallest of them (but close to median) is at the top
+    min_heap = []
 
-    def insert_num(self, num):
-        if not self.max_heap_for_smallnum or -self.max_heap_for_smallnum[0] > num:
-            heappush(self.max_heap_for_smallnum, -num)
+    def insert_num(self, n):
+        if not self.max_heap or -self.max_heap[0] > n:
+            heappush(self.max_heap, -n)
         else:
-            heappush(self.min_heap_for_largenum, num)
-
-        if len(self.max_heap_for_smallnum) > len(self.min_heap_for_largenum) + 1:
-            heappush(self.min_heap_for_largenum, -heappop(self.max_heap_for_smallnum))
-        elif len(self.min_heap_for_largenum) > len(self.max_heap_for_smallnum):
-            heappush(self.max_heap_for_smallnum, -heappop(self.min_heap_for_largenum))
-
+            heappush(self.min_heap, n)
+        
+        if len(self.max_heap) > len(self.min_heap) + 1:
+            heappush(self.min_heap, -heappop(self.max_heap))
+        elif len(self.min_heap) > len(self.max_heap):
+            heappush(self.max_heap, -heappop(self.min_heap))
+        
     def find_median(self):
-        if len(self.max_heap_for_smallnum) == len(self.min_heap_for_largenum):
-            return -self.max_heap_for_smallnum[0]/2.0 + self.min_heap_for_largenum[0]/2.0
-        return -self.max_heap_for_smallnum[0]/1.0
-
-
+        if len(self.max_heap) == len(self.min_heap):
+            return -self.max_heap[0]/2.0 + self.min_heap[0]/2.0
+        else:
+            return -self.max_heap[0]/1.0
+    
+# Driver code
 def main():
-    medianOfAStream = MedianOfAStream()
-    medianOfAStream.insert_num(3)
-    medianOfAStream.insert_num(1)
-    print("The median is: " + str(medianOfAStream.find_median()))
-    medianOfAStream.insert_num(5)
-    print("The median is: " + str(medianOfAStream.find_median()))
-    medianOfAStream.insert_num(4)
-    print("The median is: " + str(medianOfAStream.find_median()))
+    median_num = MedianOfStream()
+    nums = [35, 22, 30, 25, 1]
+    numlist = []
+    x = 1
+    for n in nums:
+        numlist.append(n)
+        print(x, ".\tData stream: ", numlist, sep="")
+        median_num.insert_num(n)
+        print("\tThe median for the given numbers is: " +
+              str(median_num.find_median()), sep="")
+        print("---")
+        x += 1
 
 
-main()
+if __name__ == "__main__":
+    main()
