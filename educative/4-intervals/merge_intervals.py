@@ -1,50 +1,39 @@
-from __future__ import print_function
+def merge_intervals(intervals):
+    result = []
+    start = 0
+    end = 1
+    current_start = intervals[0][start]
+    current_end = intervals[0][end]
+    for i in range(1, len(intervals)):
+        if intervals[i][start] <= current_end:
+            current_end = max(current_end, intervals[i][end])
+        else:
+            result.append([current_start, current_end])
+            current_start = intervals[i][start]
+            current_end = intervals[i][end]
+    result.append([current_start, current_end])
+    return result
 
-class Interval:
-  def __init__(self, start, end):
-    self.start = start
-    self.end = end
 
-  def print_interval(self):
-    print("[" + str(self.start) + ", " + str(self.end) + "]", end='')
 
-def merge(intervals):
-  if len(intervals) < 2:
-    return intervals
-
-  # sort the intervals on the start time
-  intervals.sort(key=lambda x: x.start)
-
-  mergedIntervals = []
-  start = intervals[0].start
-  end = intervals[0].end
-  for i in range(1, len(intervals)):
-    interval = intervals[i]
-    if interval.start <= end:
-      end = max(end, interval.end)
-    else:
-      mergedIntervals.append(Interval(start, end))
-      start = interval.start
-      end = interval.end
-
-  mergedIntervals.append(Interval(start, end))
-  return mergedIntervals
 
 def main():
-  print("Merged intervals: ", end='')
-  for i in merge([Interval(1, 4), Interval(2, 5), Interval(7, 9)]):
-    i.print_interval()
-  print()
+    
+    all_intervals = [
+    [[1, 5], [3, 7], [4, 6]],
+    [[1, 5], [4, 6], [6, 8], [11, 15]],
+    [[3, 7], [6, 8], [10, 12], [11, 15]],
+    [[1, 5]],
+    [[1, 9], [3, 8], [4, 4]],
+    [[1, 2], [3, 4], [8, 8]],
+    [[1, 5], [1, 3]],
+    [[1, 5], [6, 9]],
+    [[0, 0], [1, 18], [1, 3]]
+    ]
 
-  print("Merged intervals: ", end='')
-  for i in merge([Interval(6, 7), Interval(2, 4), Interval(5, 9)]):
-    i.print_interval()
-  print()
-
-  print("Merged intervals: ", end='')
-  for i in merge([Interval(1, 4), Interval(2, 6), Interval(3, 5)]):
-    i.print_interval()
-  print()
-
+    for i in range(len(all_intervals)):
+        print('---')
+        print(str(i + 1) + '. Input: ' + str(all_intervals[i]))
+        print(str(i + 1) + '. Result ' + str(merge_intervals(all_intervals[i])))
 
 main()
