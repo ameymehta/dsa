@@ -1,18 +1,18 @@
 def is_palindrome(s):
     left = 0
     right = len(s) -1
-    while (left < right):
-        if (left != right):
+    while left <= right:
+        if s[left] != s[right]:
             return False
-        left += 1
-        right -= 1
+        left +=1
+        right -=1
     return True
 
 
 # Driver Code
 def main():
 
-    test_cases = ["RACEACAR", "A", "ABCDEFGFEDCBA",
+    test_cases = ["RACECAR", "A", "ABCDEFGFEDCBA",
                   "ABC", "ABCBA", "ABBA", "RACEACAR"]
     for i in range(len(test_cases)):
         print("Test Case #", i + 1)
