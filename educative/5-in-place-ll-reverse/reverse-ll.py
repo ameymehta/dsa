@@ -6,31 +6,30 @@ class Node:
 def reverse_ll(head):
     prev = None
     current = head
-    next = None
+    next = head
     while current:
         next = current.next
         current.next = prev
         prev = current
         current = next
-    head = prev
-    return head
+    return prev
 
 def create_ll(arr):
     head = Node(arr[0])
     current = head
-    for i in range (1, len(arr)):
-        current.next = Node(arr[i])
+    for i in range(1, len(arr)):
+        new_node = Node(arr[i])
+        current.next  = new_node
         current = current.next
     return head
 
 def ll_to_arr(head):
-    result = []
+    arr = []
     current = head
-    while current.next:
-        result.append(current.value)
+    while current:
+        arr.append(current.value)
         current = current.next
-    result.append(current.value)
-    return result
+    return arr
 
 def main():
     input = (
