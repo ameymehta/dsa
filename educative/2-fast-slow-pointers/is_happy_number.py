@@ -10,7 +10,7 @@ def is_happy_number(num):
 
 def get_sum_of_squares(num):
     sum = 0
-    while num > 0:
+    while num:
         digit = num % 10
         num = num // 10
         sum += digit ** 2
