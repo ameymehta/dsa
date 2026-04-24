@@ -114,13 +114,13 @@
 
 ## Suggested Order:
 
-1. Array
-1. Linked List
-1. Tree
-1. Intervals
-1. Binary
-1. String
-1. Heap
-1. Matrix
-1. Graph
-1. Dynamic Programming
+1. [Array](https://github.com/ameymehta/dsa/tree/main/blind-75#array)
+1. [Linked List](https://github.com/ameymehta/dsa/tree/main/blind-75#linked-list)
+1. [Tree](https://github.com/ameymehta/dsa/tree/main/blind-75#tree)
+1. [Intervals](https://github.com/ameymehta/dsa/tree/main/blind-75#intervals)
+1. [Binary](https://github.com/ameymehta/dsa/tree/main/blind-75#binary)
+1. [String](https://github.com/ameymehta/dsa/tree/main/blind-75#string)
+1. [Heap](https://github.com/ameymehta/dsa/tree/main/blind-75#heap)
+1. [Matrix](https://github.com/ameymehta/dsa/tree/main/blind-75#matrix)
+1. [Graph](https://github.com/ameymehta/dsa/tree/main/blind-75#graph)
+1. [Dynamic Programming](https://github.com/ameymehta/dsa/tree/main/blind-75#dynamic-programming)
