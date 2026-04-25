@@ -1,5 +1,6 @@
 """
 https://codesignal.com/blog/example-codesignal-questions/
+
 You are given two strings: pattern and source. The first string pattern contains only the symbols 0 and 1, and the second string source contains only lowercase English letters.
 
 Your task is to calculate the number of substrings of source that match pattern. 

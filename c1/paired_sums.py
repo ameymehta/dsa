@@ -1,4 +1,6 @@
 """
+https://codesignal.com/blog/example-codesignal-questions/
+
 Given an array of unique integers numbers, your task is to find the number of pairs of indices (i, j) such that i ≤ j and the sum numbers[i] + numbers[j] is equal to some power of 2.
 
 Note: The numbers 20  = 1, 21 = 2, 22 = 4, 23 = 8, etc. are considered to be powers of 2.
