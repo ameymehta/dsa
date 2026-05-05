@@ -10,3 +10,11 @@ class Solution(object):
             else:
                 m[nums[i]] = i
         return False
+    
+    def containsDuplicate_with_set(self, nums):
+        visited = set()
+        for num in nums:
+            if num in visited:
+                return True
+            visited.add(num)
+        return False
