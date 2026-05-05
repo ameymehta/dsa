@@ -26,6 +26,28 @@ class Solution(object):
                 answer.append(productOfAll)
 
         return answer
+    
+    def productExceptSelf2(self, nums):
+        product_of_all = 1
+        zero_count = 0
+        result = [0 for _ in range(len(nums))]
+        for num in nums:
+            if num == 0:
+                zero_count += 1
+            else:
+                product_of_all *= num
+        if zero_count > 1:
+            return result
+        for i in range(len(nums)):
+            if zero_count == 1:
+                if nums[i] == 0:
+                    result[i] = product_of_all
+                    return result
+                else:
+                    continue           
+            result[i] = product_of_all/nums[i]
+        
+        return result
 
 
 def main():
