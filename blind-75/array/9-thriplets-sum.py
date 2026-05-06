@@ -22,4 +22,4 @@ class Solution(object):
                     l += 1
                 else:
                     r -= 1
-        return result
+        return list(result)
