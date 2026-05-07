@@ -12,6 +12,15 @@ class Solution(object):
             sumTracker.append(iMaxSum)
             maxSum = max(maxSum, iMaxSum)
         return maxSum
+    
+    def maxSubArrayOptimized(self, nums):
+        max_sum = 0
+        prev_sum = 0
+        for num in nums:
+            cur_sum = max(prev_sum + num, num)
+            prev_sum = cur_sum
+            max_sum = max(max_sum, cur_sum)
+        return max_sum
 
 
 def main():
