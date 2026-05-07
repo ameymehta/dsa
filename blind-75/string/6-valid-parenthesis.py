@@ -44,3 +44,4 @@ class Solution(object):
         print(self.is_valid_parentheses("([)]"))     # False
         print(self.is_valid_parentheses("{[]}"))     # True
         print(self.is_valid_parentheses("("))        # False
+        print(self.is_valid_parentheses("(a == 0)")) # True

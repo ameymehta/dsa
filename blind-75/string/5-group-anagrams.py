@@ -26,7 +26,6 @@ class Solution(object):
         return ''.join(result)
 
     def group_anagrams_new(strs):
-        result = []
         m = defaultdict(list)
         for s in strs:
             count = [0] * 26
