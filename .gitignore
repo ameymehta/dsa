@@ -1,1 +1,12 @@
 .DS_Store
+
+# Ignore VS Code settings and workspace data
+.vscode/
+.vscode/*
+
+# Ignore all Jupyter Notebook files
+*.ipynb
+
+# Ignore Jupyter Notebook checkpoints (highly recommended)
+.ipynb_checkpoints/
+.ipynb_checkpoints/*
